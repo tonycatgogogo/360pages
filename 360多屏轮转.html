@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360多屏轮转</title>
+    <link rel="stylesheet" href="css/360intro.css">
+    <script src="jq/jquery.min.js"></script>
+    <script src="jq/jquery.fullPage.min.js"></script>
+</head>
+<body>
+<div id="360page">
+    <div class="section first">
+        <div class="logo"></div>
+        <div class="text">
+            <img src="images/text_1.png" alt="介绍图片">
+            <img src="images/text_2.png" alt="介绍图片">
+            <img src="images/text_3.png" alt="介绍图片">
+            <img src="images/text_4.png" alt="介绍图片">
+            <img src="images/text_5.png" alt="介绍图片">
+            <img src="images/text_6.png" alt="介绍图片">
+            <img src="images/text_7.png" alt="介绍图片">
+            <img src="images/text_8.png" alt="介绍图片">
+        </div>
+        <div class="intro"></div>
+    </div>
+    <div class="section second">
+        <div class="shield">
+            <img src="images/shield_1.png" alt="shield">
+            <img src="images/shield_2.png" alt="shield">
+            <img src="images/shield_3.png" alt="shield">
+            <img src="images/shield_4.png" alt="shield">
+            <img src="images/shield_5.png" alt="shield">
+            <img src="images/shield_6.png" alt="shield">
+            <img src="images/shield_7.png" alt="shield">
+            <img src="images/shield_8.png" alt="shield">
+            <img src="images/shield_9.png" alt="shield">
+        </div>
+        <div class="info"></div>
+    </div>
+    <div class="section third">
+        <div class="info"></div>
+        <div class="circle">
+            <div class="rocket"></div>
+        </div>
+    </div>
+    <div class="section fourth">
+        <div class="search">
+            <div class="searchBar"></div>
+            <div class="searchText"></div>
+            <div class="searchResult"></div>
+        </div>
+        <div class="info"></div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#360page").fullpage({
+            sectionsColor:['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+            afterLoad:function(anchorLink,index){
+                $(".section").removeClass("current");
+                setTimeout(function () {
+                        $(".section").eq(index-1).addClass("current")
+                },100)
+            }
+        })
+    })
+</script>
+</body>
+</html>
